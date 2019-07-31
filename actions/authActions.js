@@ -8,7 +8,7 @@ const signup = (user) => {
             .then( newUser => {
                 resolve({
                     message: 'Signup exitoso',
-                    token: createToken(newUser._id, newUser.email, newUser.first_name)})
+                    token: createToken(newUser._id, newUser.email, newUser.first_name)});
             })
             .catch( err => {
                 reject({ 
@@ -16,7 +16,7 @@ const signup = (user) => {
                     token: err});
             });
     });
-}
+};
 
 const login = (email, password) => {
     return new Promise((resolve, reject) => {
@@ -25,17 +25,17 @@ const login = (email, password) => {
                     if (!user) {
                         reject({
                         message: 'Usuario no encontrado',
-                        token: null })
+                        token: null });
                     }
                     bcrypt.compare(password, user.password, (err, isValid) => {
-                        if (err) reject({ message: "Hubo un error", token: err}) 
+                        if (err) reject({ message: "Hubo un error", token: err});
                         else if (isValid) {
                         resolve({
                             message: 'Login exitoso',
                             token: createToken(user._id, user.email, user.first_name)});
                         }
-                    })
-                })
+                    });
+                });
             })
             .catch( err => ({ message: 'Hubo un error', token: err}));
 };
@@ -43,4 +43,4 @@ const login = (email, password) => {
 module.exports = {
     signup,
     login,
-}
+};

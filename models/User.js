@@ -21,11 +21,21 @@ const UserSchema = new mongoose.Schema({
         required: true,
         unique: true,
     },
+    movil: {
+        type: String,
+    },
+    fijo: {
+        type: String,
+    },
     password: {
         type: String,
         required: true,
     },
     is_active: {
+        type: Boolean,
+        default: true,
+    },
+    is_admin: {
         type: Boolean,
         default: true,
     },

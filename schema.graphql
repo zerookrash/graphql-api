@@ -51,13 +51,14 @@ type Casa {
   popular: Boolean
   houseType: String! # Terreno, Casa o departamento
   action: String # Compra o Renta
-  area: String
+  area: Int
   parkingLot: Int! # No. de lugares de estacionamiento
   kitchen: Boolean!
   livingRoom: Boolean!
   dinningRoom: Boolean!
   bedRoom: Int!
   halfBathrooms: Boolean!
+  NohalfBathrooms: Int
   bathRooms: Int!
   predial: Boolean
   scriptures: Boolean

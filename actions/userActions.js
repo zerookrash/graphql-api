@@ -9,4 +9,4 @@ const getUserByEmail = (email) => User.findOne({ email }).exec();
 module.exports = {
     createUser,
     getUserByEmail,
-}
+};
