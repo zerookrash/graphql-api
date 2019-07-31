@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const CasaSchema = mongoose.Schema({
+const HouseSchema = mongoose.Schema({
 
     address: {
         type: String,
@@ -73,4 +73,4 @@ const CasaSchema = mongoose.Schema({
 
 });
 
-module.exports = mongoose.model('Casa', CasaSchema);
+module.exports = mongoose.model('House', HouseSchema);

@@ -6,11 +6,21 @@ type Mutation {
   signup(data: UserCreateInput!): Auth!
   login(email: String!, password: String!): Auth!
   createUser(data: UserCreateInput!): User
+  message(dataMsn: NewMessage): Message! # No estoy seguro de lo que me tendria que regresar.
+  house(dataHouse: NewHouse!): House! # No estoy seguro de lo que me tendria que regresar.
 }
 
 type Auth {
   message: String!
   token: String!
+}
+
+type House {
+  message: String!
+}
+
+type Message {
+  message: String!
 }
 
 input UserCreateInput {
