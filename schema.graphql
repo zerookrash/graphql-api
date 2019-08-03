@@ -6,7 +6,7 @@ type Mutation {
   signup(data: UserCreateInput!): Auth!
   login(email: String!, password: String!): Auth!
   createUser(data: UserCreateInput!): User
-  post(dataMsn: NewPost): Message! # No estoy seguro de lo que me tendria que regresar.
+  post(dataMsn: NewPost): String! # No estoy seguro de lo que me tendria que regresar.
   house(dataHouse: NewHouse!): House! # No estoy seguro de lo que me tendria que regresar.
 }
 
@@ -16,11 +16,11 @@ type Auth {
 }
 
 type House {
-  message: String!
+  messageHouse: String!
 }
 
 type Post {
-  message: String!
+  messagePost: String!
 }
 
 input NewPost {
@@ -28,7 +28,51 @@ input NewPost {
   email: String!
   movil: String!
   subject: String!
-  message: String!
+  messagePost: String!
+}
+
+input UserCreateInput {
+  first_name: String
+  last_name: String
+  birth_date: String
+  gender: String
+  emailCreateUser: String!
+  movilCreateUser: String!
+  fijo: Int
+  password: String
+  is_active: Boolean
+  is_admin: Boolean!
+  
+}
+
+type User {
+  _id: String
+  first_name: String
+  last_name: String
+  birth_date: String
+  gender: String
+  emailUser: String!
+  movilUser: String!
+  fijoUser: Int
+  password: String
+  is_active: Boolean
+  is_admin: Boolean!
+}
+
+input Message {
+  nameMsnI: String!
+  emailMsnI:String!
+  movilMsnI: Int!
+  subjectMsnI: String!
+  messageMsnI: String!
+}
+
+type Message {
+  nameMsnT: String!
+  emailMsnT:String!
+  movilMsnT: Int!
+  subjectMsnT: String!
+  messageMsnT: String!
 }
 
 input NewHouse {
@@ -50,37 +94,6 @@ input NewHouse {
   predial: Boolean
   scriptures: Boolean
   ine: Boolean
-}
-
-input UserCreateInput {
-  first_name: String
-  last_name: String
-  birth_date: String
-  gender: String
-  email: String!
-  password: String!
-}
-
-type User {
-  _id: String
-  first_name: String
-  last_name: String
-  birth_date: String
-  gender: String
-  email: String!
-  movil: String!
-  fijo: Int
-  password: String
-  is_active: Boolean
-  is_admin: Boolean!
-}
-
-type Message {
-  name: String!
-  email:String!
-  movil: Int!
-  subject: String!
-  message: String!
 }
 
 type Casa {
