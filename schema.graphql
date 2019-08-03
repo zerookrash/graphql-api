@@ -4,7 +4,7 @@ type Query {
 
 type Mutation {
   signup(data: UserCreateInput!): Auth!
-  login(email: String!, password: String!): Auth!
+  login(emailCreateUser: String!, password: String!): Auth!
   createUser(data: UserCreateInput!): User
   post(dataMsn: NewPost): String! # No estoy seguro de lo que me tendria que regresar.
   house(dataHouse: NewHouse!): House! # No estoy seguro de lo que me tendria que regresar.
