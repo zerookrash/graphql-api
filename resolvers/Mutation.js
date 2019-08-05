@@ -21,8 +21,17 @@ const createUser = async (_, { data }, context) => {
                   .catch( err => err);
 };
 
+const createNewHouse = async (_, { data }, context) => {
+    const hosue = await authUserById(context);
+    if(!user) throw new Error("No está autenticado");
+    return actions.createHouse(data)
+                  .then(newHouse => newHouse)
+                  .catch( err => err );
+};
+
 module.exports = {
     signup,
     login,
     createUser,
+    createNewHouse,
 };
