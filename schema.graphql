@@ -6,17 +6,13 @@ type Mutation {
   signup(data: UserCreateInput!): Auth!
   login(emailCreateUser: String!, password: String!): Auth!
   createUser(data: UserCreateInput!): User
-  post(dataMsn: NewPost): String!
-  house(dataHouse: CreateNewHouse!): House! 
+  # post(dataMsn: NewPost): String!
+  createHouse(dataHouse: createHouse!): House! 
 }
 
 type Auth {
   message: String!
   token: String!
-}
-
-type House {
-  messageHouse: String!
 }
 
 type Post {
@@ -36,13 +32,12 @@ input UserCreateInput {
   last_name: String
   birth_date: String
   gender: String
-  emailCreateUser: String!
-  movilCreateUser: String!
-  fijo: Int
+  email: String!
+  movil: String
+  fijo: String
   password: String
   is_active: Boolean
-  is_admin: Boolean!
-  
+  is_admin: Boolean! 
 }
 
 type User {
@@ -51,9 +46,9 @@ type User {
   last_name: String
   birth_date: String
   gender: String
-  emailUser: String!
-  movilUser: String!
-  fijoUser: Int
+  email: String!
+  movil: String
+  fijoUser: String
   password: String
   is_active: Boolean
   is_admin: Boolean!
@@ -75,14 +70,13 @@ type Message {
   messageMsnT: String!
 }
 
-input House {
+input createHouse {
   address: String!
   real_number: Int
   status: String! # Compra-Venta normal, Intestado, Herencia ...
   popular: Boolean
   houseType: String! # Terreno, Casa o departamento
   action: String # Compra o Renta
-  area: Int
   parkingLot: Int! # No. de lugares de estacionamiento
   kitchen: Boolean!
   livingRoom: Boolean!
@@ -96,14 +90,14 @@ input House {
   ine: Boolean
 }
 
-type CreateNewHouse {
+type House {
+  _id: String!
   address: String!
   real_number: Int
   status: String! # Compra-Venta normal, Intestado, Herencia ...
   popular: Boolean
   houseType: String! # Terreno, Casa o departamento
   action: String # Compra o Renta
-  area: Int
   parkingLot: Int! # No. de lugares de estacionamiento
   kitchen: Boolean!
   livingRoom: Boolean!
