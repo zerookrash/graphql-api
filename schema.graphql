@@ -6,8 +6,8 @@ type Mutation {
   signup(data: UserCreateInput!): Auth!
   login(emailCreateUser: String!, password: String!): Auth!
   createUser(data: UserCreateInput!): User
-  # post(dataMsn: NewPost): String!
   createHouse(dataHouse: createHouse!): House! 
+  modHouse(dataHouse: )
 }
 
 type Auth {
@@ -91,9 +91,12 @@ input createHouse {
 }
 
 type House {
-  _id: String!
   address: String!
   real_number: Int
+  status: String! # Compra-Venta normal, Intestado, Herencia ...
+}
+
+input ModHouse {
   status: String! # Compra-Venta normal, Intestado, Herencia ...
   popular: Boolean
   houseType: String! # Terreno, Casa o departamento
@@ -106,7 +109,6 @@ type House {
   halfBathrooms: Boolean!
   NohalfBathrooms: Int
   bathRooms: Int!
-  predial: Boolean
-  scriptures: Boolean
-  ine: Boolean
 }
+
+type 
