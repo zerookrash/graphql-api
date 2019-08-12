@@ -1,5 +1,6 @@
 type Query {
   hello(name: String): String!
+  house(_id: String!): UpHouse!
 }
 
 type Mutation {
@@ -7,7 +8,6 @@ type Mutation {
   login(emailCreateUser: String!, password: String!): Auth!
   createUser(data: UserCreateInput!): User
   createHouse(dataHouse: createHouse!): House! 
-  modHouse(dataHouse: )
 }
 
 type Auth {
@@ -91,6 +91,7 @@ input createHouse {
 }
 
 type House {
+  _id: String!
   address: String!
   real_number: Int
   status: String! # Compra-Venta normal, Intestado, Herencia ...
@@ -111,4 +112,16 @@ input ModHouse {
   bathRooms: Int!
 }
 
-type 
+type UpHouse {
+  _id: String!
+  message: String
+}
+
+input deleteHouse {
+  _id: String!
+}
+
+type delHouse {
+  _id: String!
+  message: String
+}

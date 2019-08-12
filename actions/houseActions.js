@@ -4,11 +4,22 @@ const createHouse = (house) => {
     return new House(house).save();
 };
 
-const modHouse = house => {
+const ModHouse = house => {
     return new House(house).modifiedPaths();
 }
 
+const upHouse = (_id) => {
+    console.log(_id)
+}
+
+const deleteHouse = (_id) => {
+    console.log(_id)
+}
+
+
 module.exports = {
     createHouse,
-    modHouse,
+    ModHouse,
+    upHouse,
+    deleteHouse,
 };

@@ -29,7 +29,7 @@ const createHouse = async (_, { dataHouse }, context) => {
                   .catch( err => err );
 };
 
-const modHouse = async (_, house, context) => {
+const ModHouse = async (_, house, context) => {
     const actualHouse = await authUserById(context);
     console.log(house);
 }
@@ -39,5 +39,5 @@ module.exports = {
     login,
     createUser,
     createHouse,
-    modHouse,
+    ModHouse,
 };
